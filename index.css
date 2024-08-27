@@ -1,0 +1,43 @@
+.wrapper{
+    background-color: blueviolet;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-size: 70px;
+    /* justify-content: center; */
+    align-items: center;
+}
+.heading{
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    justify-content: space-between;
+    /* height: 50px; */
+    width: 100%;
+    background-color: aliceblue;
+    font-size: larger;
+}
+.heading div{
+    /* justify-content: center; */
+    align-content: center;
+}
+.logo{
+    height: 40%;
+    align-content: center;
+}
+.questionaire{
+    background-color: aqua;
+}
+.options{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 60%;
+    padding: 10%;
+    justify-content: space-evenly;
+}
+.options li{
+    width: 45%;
+    margin: 10px;
+    background-color: bisque;
+}
