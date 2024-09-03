@@ -46,9 +46,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const optionInput = document.createElement("input");
         optionInput.type = "radio";
         optionInput.name = `question${index + 1}`;
+        
         optionInput.value = option;
         optionInput.id = `question${index}-${option}`;
-
+        
         const optionLabel = document.createElement("label");
         optionLabel.textContent = option;
         optionLabel.setAttribute("style", "font-size: 20px;");
