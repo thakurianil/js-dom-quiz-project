@@ -5,28 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to the quiz!!!</title>
     <link href="./index.css" rel="stylesheet"\>
-    <link href="./index.js" >
+    
 </head>
 <body>
     <div class="wrapper">
-        Quiz
-        <div class="heading">
-            <div class="point">point</div>
-            <div class="timer">timer</div>
+        <div class="frontpage">
+            <h1>Welcome to the quiz</h1>
+            <p>This is a quiz organized by Google.</p>
+            <button onclick="nextpage('home')">
+                Next
+            </button>
         </div>
-        <div class="logo">
-            Logo
+        <div class="quizpage">
+            Quiz
+            <form id="quizsubmitted">
+                <div id="quiz-container"></div>
+                <button type="submit" onclick="nextpage('quiz')">
+                    Submit
+                </button>
+            
+            </form>
+
         </div>
-        <div class="questionaire">
-            Where do you live?
-        </div>
-        <div class="options">
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
+        <div class="result">
+            <button onclick="nextpage('restart')">
+
+            </button>
         </div>
 
     </div>
+    <script src="./index.js"></script>
+
 </body>
 </html>
+
