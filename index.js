@@ -46,10 +46,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const optionInput = document.createElement("input");
         optionInput.type = "radio";
         optionInput.name = `question${index + 1}`;
-        
+
         optionInput.value = option;
         optionInput.id = `question${index}-${option}`;
-        
+
         const optionLabel = document.createElement("label");
         optionLabel.textContent = option;
         optionLabel.setAttribute("style", "font-size: 20px;");
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function getSelectedValues() {
     const form = document.querySelector("#quizsubmitted");
     const formData = new FormData(form);
-    
+
     const results = {};
 
     formData.forEach((value, key) => {
@@ -78,15 +78,16 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch("question.json")
       .then((response) => response.json())
       .then((data) => {
-        let score =0;
+        let score = 0;
         data.forEach((question, index) => {
-            if (answer[`question${index + 1}`] === question.answer) {
-              score++;
-            }
-          });
-          console.log(score);
-        document.querySelector(".result").textContent = `Your score is ${score} out of ${data.length}`;
-          
+          if (answer[`question${index + 1}`] === question.answer) {
+            score++;
+          }
+        });
+        console.log(score);
+        const result = document.querySelector(".result");
+
+        result.textContent = `Your score is ${score} out of ${data.length}`;
       })
       .catch((error) => console.error("Error:", error));
   }
@@ -94,11 +95,10 @@ document.addEventListener("DOMContentLoaded", () => {
   document
     .getElementById("quizsubmitted")
     .addEventListener("submit", (event) => {
-      event.preventDefault(); 
+      event.preventDefault();
 
       const selectedValues = getSelectedValues();
-        calculateAnswer(selectedValues);
-
+      calculateAnswer(selectedValues);
     });
   loadQuiz();
 });
